@@ -1,0 +1,3 @@
+*.sbt text eol=lf encoding=utf8
+*.scala text eol=lf encoding=utf8
+*.properties text eol=lf encoding=utf8
