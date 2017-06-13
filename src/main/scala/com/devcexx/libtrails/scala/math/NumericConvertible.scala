@@ -13,9 +13,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with libtrails.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.devcexx.libtrails.scala
+package com.devcexx.libtrails.scala.math
 
-trait NumberConverter[A] {
+trait NumericConvertible[A] {
   def fromInt(n: Int): A
   def fromLong(n: Long): A
   def fromFloat(n: Float): A
@@ -26,8 +26,8 @@ trait NumberConverter[A] {
   def toDouble(n: A): Double
 }
 
-object NumberConverters {
-  implicit object NumberConverterIsInt extends NumberConverter[Int] {
+object NumericConvertible {
+  implicit object IntIsNumericConvertible extends NumericConvertible[Int] {
     override def fromInt(n: Int) = n
     override def fromLong(n: Long) = n.toInt
     override def fromFloat(n: Float) = n.toInt
@@ -37,7 +37,7 @@ object NumberConverters {
     override def toFloat(n: Int): Float = n.toFloat
     override def toDouble(n: Int): Double = n.toDouble
   }
-  implicit object NumberConverterIsLong extends NumberConverter[Long] {
+  implicit object LongIsNumericConvertible extends NumericConvertible[Long] {
     override def fromInt(n: Int) = n.toLong
     override def fromLong(n: Long) = n
     override def fromFloat(n: Float) = n.toLong
@@ -47,7 +47,7 @@ object NumberConverters {
     override def toFloat(n: Long): Float = n.toFloat
     override def toDouble(n: Long): Double = n.toDouble
   }
-  implicit object NumberConverterIsFloat extends NumberConverter[Float] {
+  implicit object FloatIsNumericConvertible extends NumericConvertible[Float] {
     override def fromInt(n: Int) = n.toFloat
     override def fromLong(n: Long) = n.toFloat
     override def fromFloat(n: Float) = n
@@ -57,7 +57,7 @@ object NumberConverters {
     override def toFloat(n: Float): Float = n
     override def toDouble(n: Float): Double = n.toDouble
   }
-  implicit object NumberConverterIsDouble extends NumberConverter[Double] {
+  implicit object DoubleIsNumericConvertible extends NumericConvertible[Double] {
     override def fromInt(n: Int) = n.toDouble
     override def fromLong(n: Long) = n.toDouble
     override def fromFloat(n: Float) = n.toDouble
