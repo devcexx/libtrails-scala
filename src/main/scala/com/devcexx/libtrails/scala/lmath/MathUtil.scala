@@ -98,6 +98,6 @@ object MathUtil {
     * @return A stream with the dots of the line.
     */
   def linePointsStream[A, B <: Vector3[A]](origin: B, director: B, step: A): Stream[B#VecSelf] =
-    Stream.from(1).map(k => origin + (director * director.n.times(director.conv.fromInt(k), step)))
+    Stream.from(0).map(k => origin + (director * director.n.times(director.conv.fromInt(k), step)))
 
 }
