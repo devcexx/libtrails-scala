@@ -13,16 +13,67 @@
  *  You should have received a copy of the GNU General Public License
  *  along with libtrails.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.devcexx.libtrails.scala.math
+package com.devcexx.libtrails.scala.lmath
 
+/**
+  * Represents a type that can be convertible in a numeric type.
+  * @tparam A the convertible type.
+  */
 trait NumericConvertible[A] {
+  /**
+    * Creates a new object of the type A from an int.
+    * @param n the number.
+    * @return an A object.
+    */
   def fromInt(n: Int): A
+
+  /**
+    * Creates a new object of the type A from a long.
+    * @param n the number.
+    * @return an A object.
+    */
   def fromLong(n: Long): A
+
+  /**
+    * Creates a new object of the type A from a float.
+    * @param n the number.
+    * @return an A object.
+    */
   def fromFloat(n: Float): A
+
+  /**
+    * Creates a new object of the type A from a double.
+    * @param n the number.
+    * @return an A object.
+    */
   def fromDouble(n: Double): A
+
+  /**
+    * Converts a value of type A to an int
+    * @param n the value.
+    * @return the numeric value.
+    */
   def toInt(n: A): Int
+
+  /**
+    * Converts a value of type A to a long
+    * @param n the value.
+    * @return the numeric value.
+    */
   def toLong(n: A): Long
+
+  /**
+    * Converts a value of type A to a float
+    * @param n the value.
+    * @return the numeric value.
+    */
   def toFloat(n: A): Float
+
+  /**
+    * Converts a value of type A to a double
+    * @param n the value.
+    * @return the numeric value.
+    */
   def toDouble(n: A): Double
 }
 

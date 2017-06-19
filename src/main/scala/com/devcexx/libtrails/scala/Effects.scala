@@ -1,8 +1,26 @@
+/*
+ *  This file is part of libtrails.
+ *  libtrails is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  libtrails is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with libtrails.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package com.devcexx.libtrails.scala
 
-sealed trait Effect { val bukkitEffect: org.bukkit.Effect }
-sealed trait EffectColorable extends Effect
+trait Effect { val bukkitEffect: org.bukkit.Effect }
+trait EffectColorable extends Effect
 
+/**
+  * Object that contains objects that reprents each effect that may be used to build suppliers and trails.
+  */
 object Effects {
   object FIREWORKS_SPARK extends Effect { override val bukkitEffect = org.bukkit.Effect.FIREWORKS_SPARK }
   object MAGIC_CRIT extends Effect { override val bukkitEffect = org.bukkit.Effect.MAGIC_CRIT }
